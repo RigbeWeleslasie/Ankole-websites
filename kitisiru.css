@@ -1,0 +1,130 @@
+body{
+  overflow: hidden;
+  margin: 0;
+}
+.menu{
+
+    display:flex;
+    height:100vh;
+    width:100vw;
+    
+
+}
+.menu-food{
+    background-image:url('scarf.jpg') ;
+    background-size: 100vw 100vh;
+    background-position: cover;
+    width: 100%;
+    height: 108%;
+    text-align: center;   
+    position: relative;
+}
+.kitisiru-logo {
+  margin-top: 20%;
+}
+
+.menu-food h1{
+ color: rgb(224, 73, 18);
+ font-size: 3em;
+}
+
+.menu-food h3{
+    color: white;
+    font-size: 2em;
+}
+
+.paragraph{
+    margin-top: 25%;
+}
+.menu-meal{
+    background-color: black;
+    width: 100%;
+    height: 102%;
+    padding: 2%;
+    overflow: scroll;
+
+  }
+  .menu-meal ul li{
+    color: white;
+    list-style: none;
+    
+    display: inline;
+   justify-content: space-between;
+   margin-left: 5%;
+ 
+  }
+  .menu-meal ul li a{
+    text-decoration: none;
+    color: white;
+  }
+  .menu-meal ul li a:hover{
+    color: orange;
+  }
+  .food-price{
+    display: flex;
+    color: white;
+    justify-content: space-between;
+
+  }
+  #logo-on-page img{
+    margin-top: -50%;
+  }
+  .about-breakfast{
+    color:white;
+  }
+  #breakfast h2{
+    color: brown;
+  }
+  .logo{
+    display: flex;
+    gap:-50%;
+    color: white;
+    justify-content: space-between;
+  
+  }
+  .logo img{
+    width:15%;
+    
+  }
+  .soups-price{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+  }
+  .text-food{
+   color: white;
+  }
+  .salad{
+    color: rgb(211, 15, 15);
+  }
+.food{
+  color: white;
+}
+.sandwitch{
+  color: rgb(211, 15, 15);
+}
+#drinks-link h1{ 
+  color:white;
+}
+#drinks-link H2{
+  color: rgb(211, 15, 15);
+}
+@media(max-width:768px){
+  .menu{
+    flex-direction: column;
+  }
+  .logo img{
+    width: 100%;
+  }
+  .paragraph{
+    margin: 0;
+  }
+ .logo{
+  margin:0;
+ }
+ .soups-price{
+  flex-direction: column;
+ }
+}
+ 
+ 

@@ -1,0 +1,514 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Chillax, sans-serif;
+}
+
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+.social-top {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.social-top a {
+    color: white;
+    font-size: 24px;
+    margin-left: 15px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.social-top a:hover {
+    transform: scale(1.2);
+}
+
+.whatsapp-icon {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.whatsapp-icon a {
+    color: white;
+    font-size: 24px;
+    background-color:  transparent;
+    background-color: rgb(47, 255, 151);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon a:hover {
+    transform: scale(1.1);
+}
+
+
+.page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    overflow: hidden;
+}
+
+.page.active {
+    display: block;
+}
+
+
+.slider {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+   
+}
+
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+
+.page-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+    color: white;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.page-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.page-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.reviews-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1000px;
+    overflow: hidden;
+    z-index: 10;
+}
+.logo-ankole{
+    position: absolute;
+    top: 20px;
+    left: 43%;
+    z-index: 1;
+    color:white;
+}
+.logo-ankole img{
+    margin-left: 10%;
+}
+
+.reviews-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review {
+    min-width: 100%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    padding: 40px;
+  
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.review-content {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.review-author {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.review-rating {
+   color: white;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.review-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 20;
+    padding: 0 20px;
+}
+
+.review-nav button {
+    background: rgba(6, 5, 5, 0.3);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.review-nav button:hover {
+    background: rgba(255,255,255,0.5);
+    transform: scale(1.1);
+}
+
+
+.nav-bottom {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+    display: flex;
+    gap: 5px;
+}
+
+.nav-bottom a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.nav-bottom a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.menu-icon-container {
+    position: relative;
+    display: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 8px 15px;
+    color: white;
+}
+
+.dropdown-links {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background-color: rgba(0,0,0,0.9);
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    min-width: 200px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+}
+
+.dropdown-links a {
+    display: block;
+    padding: 10px;
+    margin: 5px 0;
+}
+.menu-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.menu-btn:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.0);
+}
+
+.menu-btn i {
+    font-size: 24px;
+    color: white;
+}
+
+.menu-links {
+    position: relative;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 10px 10px 0 0;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    min-width: 200px;
+    box-shadow: 0 -5px 10px rgba(0,0,0,0.3);
+    z-index: 1001;
+}
+
+.menu-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.menu-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.hours-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.hours-btn:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+}
+#reservations-page{
+   
+    width: 100%;
+}
+#reservation-form{
+    width: 100%;
+}
+.reservation{
+    background-image: url('https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65c34fee7c31fcb2f8c3700b_001-p-2000.jpg');
+    background-position: cover;
+    width: 100vw;
+    height: 100vh;
+}
+.reservation-content{
+padding-top: 30%;
+}
+.hours-btn i {
+    font-size: 24px;
+    color: white;
+}
+
+.hours-info {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background:black;
+    backdrop-filter: blur(10px);
+    border-radius: 10px 10px 0 0;
+    padding: 15px;
+    display: none;
+    flex-direction: column;
+    min-width: 200px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+    z-index: 1001;
+    color:white;
+}
+
+.hours-info p {
+    margin: 5px 0;
+    white-space: nowrap;
+   
+}
+
+.hours-info strong {
+    display: inline-block;
+    width: 80px;
+}
+
+.show-hours {
+    display: flex;
+}
+
+.home-btn {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.home-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+#reviews-page{
+    background-color: black;
+    color: white;
+}
+#reviews-page img{
+    margin-left: 43%;
+}
+.slider img{
+color: black;
+
+}
+.slider h1{
+position: fixed;
+margin-left: 35%;
+color: black;
+font-size: 10em;
+margin-top: 20%;
+color: white;
+color: gray;
+
+}
+
+@media (min-width: 769px) {
+    .menu-btn:hover .menu-links {
+        display: flex;
+    }
+    .hours-btn:hover .hours-info {
+        display: flex;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-content, .reviews-container, .component-container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .page-content h2 {
+        font-size: 2rem;
+    }
+
+    .page-content p, .review-content {
+        color: aliceblue;
+        font-size: 1rem;
+    }
+
+    .reserve {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-bottom {
+        width: calc(100% - 20px);
+        padding: 10px;
+        bottom: 10px;
+        justify-content: flex-end;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-icon-container {
+        display: block;
+    }
+
+ 
+    .menu-icon-container.active .dropdown-links {
+        display: block;
+    }
+
+    .dropdown-links {
+        left: auto;
+        right: 0;
+        bottom: 100%;
+        border-radius: 10px 0 10px 10px;
+    }
+    
+  
+    .menu-btn, .hours-btn {
+        display: none;
+    }
+    
+    .review {
+        padding: 20px;
+    }
+    #reviews-page img{
+        margin-left: 10%;
+    }
+.slider h1{
+    width: 100%;
+    text-align: center;
+}
+    
+}
