@@ -39,11 +39,12 @@ body{
     text-decoration: none;
     color:white;
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    font-family: Chillax, sans-serif;
 }
 
 
@@ -81,6 +82,7 @@ body {
     color: white;
     font-size: 24px;
     background-color:  transparent;
+    background-color: gray;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -94,6 +96,8 @@ body {
 .whatsapp-icon a:hover {
     transform: scale(1.1);
 }
+
+
 .page {
     position: fixed;
     top: 0;
@@ -117,6 +121,7 @@ body {
     background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
    
 }
+
 
 .slide {
     position: absolute;
@@ -173,17 +178,39 @@ body {
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
+
 .reviews-container {
     position: absolute;
-    top: 50%;
+    top: 100%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-100%, -100%);
     width: 100%;
+    height: 100vh;
     max-width: 1000px;
-    overflow: hidden;
+   
     z-index: 10;
 }
-
+.logo-ankole{
+    position: absolute;
+    top: 20px;
+    left: 30%;
+    z-index: 1;
+    color:white;
+}
+.logo-ankole img{
+    margin-left: 10%;
+}
+.reviews-container{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-width: 1000px;
+    height:100vh;
+    overflow: hidden;
+    z-index: 1;
+}
 .reviews-slider {
     display: flex;
     width: 100%;
@@ -194,22 +221,28 @@ body {
 .review {
     min-width: 100%;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,0.7);
+    background-color:black;
     padding: 40px;
-    border-radius: 15px;
     text-align: center;
+   
     backdrop-filter: blur(5px);
 }
 
 .review-content {
-    font-size: 1.5rem;
-    font-style: italic;
+    font-size: 1.2rem;
     margin-bottom: 20px;
     line-height: 1.6;
+}
+.review-slider{
+    display:flex;
+    width: 100%;
+    height: 100%;
+    transition:transform 0.5s ;
 }
 
 .review-author {
@@ -221,6 +254,16 @@ body {
    color: white;
     font-size: 1.5rem;
     margin: 10px 0;
+}
+.left-quote{
+    margin-right: 95%;
+    font-size: 54px;
+    color: rgb(201, 36, 36);
+}
+.right-quotes{
+    margin-left: 95%;
+    font-size: 54px;
+    color: rgb(201, 36, 36);
 }
 
 .review-nav {
@@ -256,13 +299,13 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 1000px;
+    width: calc(80% - 50px);
+    max-width: 950px;
     background-color: rgba(0,0,0,0.8);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    padding: 15;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
@@ -280,6 +323,7 @@ body {
     padding: 8px 15px;
     border-radius: 5px;
     white-space: nowrap;
+   margin-left: 15px;
 }
 
 .nav-bottom a:hover {
@@ -305,7 +349,7 @@ body {
     left: 0;
     background-color: rgba(0,0,0,0.9);
     border-radius: 10px 10px 0 0;
-    padding: 10px;
+    padding: 0px;
     min-width: 200px;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
 }
@@ -322,13 +366,15 @@ body {
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    border-radius: 5px;
     padding: 8px 15px;
     border-radius: 5px;
 }
 
 .menu-btn:hover {
     background-color: rgba(255,255,255,0.2);
-    transform: scale(1.1);
+    transform: scale(1.05);
+    
 }
 
 .menu-btn i {
@@ -337,14 +383,13 @@ body {
 }
 
 .menu-links {
-    position: absolute;
+    position: relative;
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(10px);
     border-radius: 10px 10px 0 0;
-    padding: 15px;
     display: none;
     flex-direction: column;
     min-width: 200px;
@@ -380,22 +425,6 @@ body {
     background-color: rgba(255,255,255,0.2);
     transform: scale(1.1);
 }
-#reservations-page{
-   
-    width: 100%;
-}
-#reservation-form{
-    width: 100%;
-}
-.reservation{
-    background-image: url('https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65c34fee7c31fcb2f8c3700b_001-p-2000.jpg');
-    background-position: cover;
-    width: 100vw;
-    height: 100vh;
-}
-.reservation-content{
-padding-top: 30%;
-}
 .hours-btn i {
     font-size: 24px;
     color: white;
@@ -415,7 +444,7 @@ padding-top: 30%;
     min-width: 200px;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
     z-index: 1001;
-    color:white;
+    color:black;
 }
 
 .hours-info p {
@@ -450,18 +479,38 @@ padding-top: 30%;
     color: white;
 }
 #reviews-page img{
-    margin-left: 45%;
+    margin-left: 43%;
 }
 .slider img{
 color: black;
 
 }
 .slider h1{
-margin-left: 50%;
+position: fixed;
+margin-left: 35%;
 color: black;
-font-size: 2em;
+font-size: 10em;
+margin-top: 20%;
+color: white;
+color: gray;
+
+}
+.home-btn{
+    background:rgba(255, 255, 255, 0.3) ;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.home-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
 }
 
+
+
+
+/*  */
 @media (min-width: 769px) {
     .menu-btn:hover .menu-links {
         display: flex;
@@ -471,73 +520,106 @@ font-size: 2em;
     }
 }
 
+
 @media (max-width: 768px) {
-    .page-content, .reviews-container, .component-container {
-        width: 95%;
-        padding: 20px;
-    }
+  .page-content, .reviews-container, .component-container {
+      width: 95%;
+      padding: 20px;
+  }
 
-    .page-content h2 {
-        font-size: 2rem;
-    }
+  .page-content h2 {
+      font-size: 2rem;
+  }
 
-    .page-content p, .review-content {
-        color: aliceblue;
-        font-size: 1rem;
-    }
+  .page-content p, .review-content {
+      color: aliceblue;
+      font-size: 1rem;
+  }
 
-    .reserve {
-        flex-direction: column;
-        gap: 20px;
-    }
+  .reserve {
+      flex-direction: column;
+      gap: 20px;
+  }
 
-    .nav-bottom {
-        width: calc(100% - 20px);
-        padding: 10px;
-        bottom: 10px;
-        justify-content: flex-end;
-    }
+  .nav-bottom {
+      width: calc(100% - 20px);
+      padding: 10px;
+      bottom: 10px;
+      justify-content: flex-end;
+  }
 
-    .nav-links {
-        display: none;
-    }
+  .nav-links {
+      display: none;
+  }
 
-    .menu-icon-container {
-        display: block;
-    }
+  .menu-icon-container {
+      display: block;
+  }
 
- 
-    .menu-icon-container.active .dropdown-links {
-        display: block;
-    }
+  .nav-bottom {
+    width: calc(100% - 20px);
+    padding: 10px;
+    bottom: 10px;
+    justify-content: flex-end;
+}
+  .menu-icon-container.active .dropdown-links {
+      display: block;
+  }
 
-    .dropdown-links {
-        left: auto;
-        right: 0;
-        bottom: 100%;
-        border-radius: 10px 0 10px 10px;
-    }
-    
-  
-    .menu-btn, .hours-btn {
-        display: none;
-    }
-    
-    .review {
-        padding: 20px;
-    }
-    #reviews-page img{
-        margin-left: 10%;
-    }
-    .location{
-        flex-direction: column;
-        
-    }
-    .Kitisuru-locate{
-        margin: 0%;
-    }
+  .dropdown-links {
+      left: auto;
+      right: 0;
+      bottom: 100%;
+      border-radius: 10px 0 10px 10px;
+  }
   
 
+  .menu-btn, .hours-btn {
+      display: none;
+  }
+  
+  .review {
+      padding: 20px;
+  }
+  #reviews-page img{
+      margin-left: 10%;
+  }
+.slider h1{
+  width: 100%;
+  text-align: center;
+  margin:0 ;
+  font-size: 4em;
+  margin-top: 30%;
+}
+.menu{
+  flex-direction: column;
+}
+
+.paragraph{
+  margin: 0;
+}
+
+.soups-price{
+flex-direction: column;
+}
+.logo img{
+width:10%;
+height: 10%;
+margin-top: 5%;
+
+}
+.location{
+    flex-direction: column;
     
 }
+.Kitisuru-locate{
+    margin: 0%;
+}
+
+  
+}
+ 
+ 
+
+
 

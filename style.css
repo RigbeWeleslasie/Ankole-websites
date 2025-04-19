@@ -40,7 +40,7 @@ body {
     color: white;
     font-size: 24px;
     background-color:  transparent;
-    background-color: rgb(47, 255, 151);
+    background-color: gray;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -136,14 +136,14 @@ body {
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
+
 .reviews-container {
     position: absolute;
-    top: 50%;
+    top: 100%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-100%, -100%);
     width: 100%;
-    max-width: 1000px;
-    overflow: hidden;
+    height: 100vh;
     z-index: 10;
 }
 .logo-ankole{
@@ -156,7 +156,17 @@ body {
 .logo-ankole img{
     margin-left: 10%;
 }
-
+.reviews-container{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    max-width: 1000px;
+    height:100vh;
+    overflow: hidden;
+    z-index: 1;
+}
 .reviews-slider {
     display: flex;
     width: 100%;
@@ -172,9 +182,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,0.7);
+    background-color:black;
     padding: 40px;
-  
     text-align: center;
     backdrop-filter: blur(5px);
 }
@@ -183,6 +192,12 @@ body {
     font-size: 1.2rem;
     margin-bottom: 20px;
     line-height: 1.6;
+}
+.review-slider{
+    display:flex;
+    width: 100%;
+    height: 100%;
+    transition:transform 0.5s ;
 }
 
 .review-author {
@@ -194,6 +209,16 @@ body {
    color: white;
     font-size: 1.5rem;
     margin: 10px 0;
+}
+.left-quote{
+    margin-right: 95%;
+    font-size: 54px;
+    color: rgb(201, 36, 36);
+}
+.right-quotes{
+    margin-left: 95%;
+    font-size: 54px;
+    color: rgb(201, 36, 36);
 }
 
 .review-nav {
@@ -229,20 +254,20 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 1000px;
+    width: calc(80% - 50px);
+    max-width: 950px;
     background-color: rgba(0,0,0,0.8);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    padding: 15;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .nav-links {
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }
 
 .nav-bottom a {
@@ -253,6 +278,7 @@ body {
     padding: 8px 15px;
     border-radius: 5px;
     white-space: nowrap;
+   margin-left: 15px;
 }
 
 .nav-bottom a:hover {
@@ -278,7 +304,7 @@ body {
     left: 0;
     background-color: rgba(0,0,0,0.9);
     border-radius: 10px 10px 0 0;
-    padding: 10px;
+    padding: 0px;
     min-width: 200px;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
 }
@@ -289,18 +315,30 @@ body {
     margin: 5px 0;
 }
 .menu-btn {
-    position: relative;
+    /* position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 5px;
+    padding: 8px 15px;
+    border-radius: 5px; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 5px;
+
 }
 
 .menu-btn:hover {
     background-color: rgba(255,255,255,0.2);
-    transform: scale(1.0);
+    transform: scale(1.1);
+    
 }
 
 .menu-btn i {
@@ -316,11 +354,10 @@ body {
     background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(10px);
     border-radius: 10px 10px 0 0;
-    padding: 10px;
     display: none;
     flex-direction: column;
     min-width: 200px;
-    box-shadow: 0 -5px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
     z-index: 1001;
 }
 
@@ -352,22 +389,6 @@ body {
     background-color: rgba(255,255,255,0.2);
     transform: scale(1.1);
 }
-#reservations-page{
-   
-    width: 100%;
-}
-#reservation-form{
-    width: 100%;
-}
-.reservation{
-    background-image: url('https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65c34fee7c31fcb2f8c3700b_001-p-2000.jpg');
-    background-position: cover;
-    width: 100vw;
-    height: 100vh;
-}
-.reservation-content{
-padding-top: 30%;
-}
 .hours-btn i {
     font-size: 24px;
     color: white;
@@ -387,7 +408,7 @@ padding-top: 30%;
     min-width: 200px;
     box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
     z-index: 1001;
-    color:white;
+    color:black;
 }
 
 .hours-info p {
@@ -438,17 +459,29 @@ color: white;
 color: gray;
 
 }
+.home-btn{
+    background:rgba(255, 255, 255, 0.3) ;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.home-btn:hover{
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
 
-@media (min-width: 769px) {
+@media (min-width:769px){
     .menu-btn:hover .menu-links {
         display: flex;
     }
     .hours-btn:hover .hours-info {
+       
         display: flex;
     }
 }
 
-@media (max-width: 768px) {
+@media(max-width:768px) {
     .page-content, .reviews-container, .component-container {
         width: 95%;
         padding: 20px;
@@ -506,9 +539,20 @@ color: gray;
     #reviews-page img{
         margin-left: 10%;
     }
-.slider h1{
+.slider{
     width: 100%;
-    text-align: center;
+    align-content: center;
+    margin:0 ;
+    
+}
+.slide h1{
+    font-size: 4em;
+    margin-top: 50%;
+    align-content: center;
+    margin-left: -2%;
+}
+.menu-class,.review-class,.event-class,.live-class,.contact-class{
+    display: none;
 }
     
 }
