@@ -534,10 +534,11 @@ color: gray;
     }
     
     .review {
-        padding: 20px;
+        padding: 0;
     }
     #reviews-page img{
         margin-left: 10%;
+        width: 50%;
     }
 .slider{
     width: 100%;
