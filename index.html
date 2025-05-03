@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ankole website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -27,24 +26,20 @@
         <div class="slider">
             <div class="slide active">
                 <h1>welcome</h1>
-                <img
-                    src="https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65c3b0c67153d0056443f31e_ankolegrill_escobar1.jpg">
+                <img src="https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65c3b0c67153d0056443f31e_ankolegrill_escobar1.jpg">
             </div>
             <div class="slide">
                 <h1>experience</h1>
-                <img
-                    src="https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65c5f9644676e29dddf08c65_ankolegrill_t-bone-steak-2024-1.jpg">
+                <img src="https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65c5f9644676e29dddf08c65_ankolegrill_t-bone-steak-2024-1.jpg">
             </div>
             <div class="slide">
                 <h1>taste</h1>
-                <img
-                    src="https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65cb61d8c46dc657819e1cc2_ankolegrill_slider.jpg">
+                <img src="https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65cb61d8c46dc657819e1cc2_ankolegrill_slider.jpg">
             </div>
 
             <div class="slide">
                 <h1>savour</h1>
-                <img
-                    src="https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65cb61d8c46dc657819e1cc2_ankolegrill_slider.jpg">
+                <img src="https://cdn.prod.website-files.com/65aa1f78e2380ad0548de50d/65c5f9644676e29dddf08c65_ankolegrill_t-bone-steak-2024-1.jpg">
             </div>
         </div>
     </div>
@@ -81,9 +76,9 @@
                     </div>
                     <h1>Reviews</h1>
                     <div class="review-content">
-                        "Such a fantastic restaurant, I plan on being a regularhere. The food is amazing the atmosphere
+                        Such a fantastic restaurant, I plan on being a regularhere. The food is amazing the atmosphere
                         is so nice and the service isexceptional. I pray you are able to visit them at least once so you
-                        canunderstand what I'm saying. 10/10.Recommended dishes: Steakmust go visitthem! "
+                        canunderstand what I'm saying. 10/10.Recommended dishes: Steakmust go visitthem! 
                     </div>
                     <div class="review-rating">
                         Paul Kamau
@@ -101,8 +96,8 @@
                     </div>
                     <h1>Reviews</h1>
                     <div class="review-content">
-                        "Best place to eat out. If you want to have a niceromantic date this place is perfect. The food
-                        is fantastic only be carefulcause the portions are bigger than you would expect."
+                        Best place to eat out. If you want to have a niceromantic date this place is perfect. The food
+                        is fantastic only be carefulcause the portions are bigger than you would expect.
                     </div>
                     <div class="review-rating">
                         Vladimiro Stivali
@@ -176,12 +171,9 @@
         </div>
     </div>
 </div>
-
-    
     <script>
         const pages = document.querySelectorAll('.page');
         let sliders = [];
-        
         pages.forEach(page => {
             const slider = page.querySelector('.slider');
             if (slider) {
@@ -199,9 +191,7 @@
         function rotateSlides() {
             sliders.forEach(sliderData => {
                 const { slides, currentSlide } = sliderData;
-                
                 slides.forEach(slide => slide.classList.remove('active'));
-                
                 sliderData.currentSlide = (currentSlide + 1) % slides.length;
                 slides[sliderData.currentSlide].classList.add('active');
             });
@@ -211,9 +201,7 @@
         const menuIconContainer = document.querySelector('.menu-icon-container');
         const menuBtn = document.getElementById('menuBtn');
         const hoursBtn = document.getElementById('hoursBtn');
-        
         function setActivePage(pageId) {
-
             pages.forEach(page => page.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             navLinks.forEach(link => {
@@ -224,7 +212,6 @@
                 updateReviewsSlider();
             }
         }
-        
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -269,13 +256,11 @@
         function updateReviewsSlider() {
             reviewsSlider.style.transform = `translateX(-${currentReview * 100}%)`;
         }
-        
         if (prevReviewBtn && nextReviewBtn) {
             prevReviewBtn.addEventListener('click', () => {
                 currentReview = (currentReview - 1 + reviews.length) % reviews.length;
                 updateReviewsSlider();
             });
-            
             nextReviewBtn.addEventListener('click', () => {
                 currentReview = (currentReview + 1) % reviews.length;
                 updateReviewsSlider();

@@ -5,7 +5,6 @@
     font-family: Chillax, sans-serif;
 }
 
-
 body {
     overflow-x: hidden;
     position: relative;
@@ -76,7 +75,7 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    
    
 }
 
@@ -136,16 +135,6 @@ body {
     margin-bottom: 20px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
-
-.reviews-container {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-100%, -100%);
-    width: 100%;
-    height: 100vh;
-    z-index: 10;
-}
 .logo-ankole{
     position: absolute;
     top: 20px;
@@ -154,7 +143,7 @@ body {
     color:white;
 }
 .logo-ankole img{
-    margin-left: 10%;
+    margin-left: 30%;
 }
 .reviews-container{
     position: relative;
@@ -162,7 +151,6 @@ body {
     left: 50%;
     transform: translate(-50%,-50%);
     width: 100%;
-    max-width: 1000px;
     height:100vh;
     overflow: hidden;
     z-index: 1;
@@ -173,7 +161,6 @@ body {
     height: 100%;
     transition: transform 0.5s ease-in-out;
 }
-
 .review {
     min-width: 100%;
     height: 100%;
@@ -188,39 +175,43 @@ body {
     backdrop-filter: blur(5px);
 }
 
-.review-content {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
 .review-slider{
     display:flex;
     width: 100%;
     height: 100%;
     transition:transform 0.5s ;
 }
-
 .review-author {
     font-size: 1.2rem;
     font-weight: bold;
 }
-
 .review-rating {
    color: white;
     font-size: 1.5rem;
     margin: 10px 0;
 }
 .left-quote{
-    margin-right: 95%;
+    margin-right: 81%;
     font-size: 54px;
     color: rgb(201, 36, 36);
 }
 .right-quotes{
-    margin-left: 95%;
+    margin-left: 81%;
     font-size: 54px;
     color: rgb(201, 36, 36);
 }
-
+#prevReview{
+    margin-left: 10%;
+}
+#nextReview{
+  margin-right: 10%;
+}
+.review-content {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    width: 60%;
+}
 .review-nav {
     position: absolute;
     top: 50%;
@@ -230,7 +221,6 @@ body {
     z-index: 20;
     padding: 0 20px;
 }
-
 .review-nav button {
     background: rgba(6, 5, 5, 0.3);
     border: none;
@@ -247,27 +237,27 @@ body {
     background: rgba(255,255,255,0.5);
     transform: scale(1.1);
 }
-
-
 .nav-bottom {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: calc(80% - 50px);
-    max-width: 950px;
+    max-width: 970px;
     background-color: rgba(0,0,0,0.8);
     z-index: 1000;
     display: flex;
     justify-content: space-between;
-    padding: 15;
-    border-radius: 10px;
+    padding: 30px;
+    border-radius: 200px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .nav-links {
     display: flex;
     gap: 10px;
+    margin-left: 0;
+   
 }
 
 .nav-bottom a {
@@ -315,15 +305,6 @@ body {
     margin: 5px 0;
 }
 .menu-btn {
-    /* position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 5px;
-    padding: 8px 15px;
-    border-radius: 5px; */
     position: relative;
     display: flex;
     align-items: center;
@@ -332,13 +313,12 @@ body {
     transition: all 0.3s ease;
     padding: 8px 15px;
     border-radius: 5px;
-
 }
 
 .menu-btn:hover {
     background-color: rgba(255,255,255,0.2);
     transform: scale(1.1);
-    
+    padding-top: 0%;
 }
 
 .menu-btn i {
@@ -347,7 +327,7 @@ body {
 }
 
 .menu-links {
-    position: relative;
+    position: absolute;
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -373,6 +353,8 @@ body {
 
 .menu-links a:hover {
     background: rgba(255, 255, 255, 0.2);
+
+    
 }
 .hours-btn {
     position: relative;
@@ -399,7 +381,7 @@ body {
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background:black;
+    background:white;
     backdrop-filter: blur(10px);
     border-radius: 10px 10px 0 0;
     padding: 15px;
@@ -410,10 +392,13 @@ body {
     z-index: 1001;
     color:black;
 }
-
+.hours-info a{
+   color: black;
+} 
 .hours-info p {
     margin: 5px 0;
     white-space: nowrap;
+    color:black;
    
 }
 
@@ -443,7 +428,7 @@ body {
     color: white;
 }
 #reviews-page img{
-    margin-left: 43%;
+    margin-left: 4%;
 }
 .slider img{
 color: black;
@@ -479,6 +464,8 @@ color: gray;
        
         display: flex;
     }
+ 
+   
 }
 
 @media(max-width:768px) {
@@ -486,7 +473,15 @@ color: gray;
         width: 95%;
         padding: 20px;
     }
-
+    #prevReview{
+        margin-left: -5%;
+    }
+    #nextReview{
+        margin-right: -5%;
+    }
+    .review-content{
+        width: 100vw;
+    }
     .page-content h2 {
         font-size: 2rem;
     }
@@ -499,13 +494,15 @@ color: gray;
     .reserve {
         flex-direction: column;
         gap: 20px;
+        height: auto;
     }
 
     .nav-bottom {
-        width: calc(100% - 20px);
-        padding: 10px;
-        bottom: 10px;
+        width: calc(100% - 0%);
+        padding: 20px;
+        bottom: 10px; 
         justify-content: flex-end;
+        left: 50%;
     }
 
     .nav-links {
@@ -527,7 +524,13 @@ color: gray;
         bottom: 100%;
         border-radius: 10px 0 10px 10px;
     }
-    
+    .left-quote{
+        display: none;
+
+    }
+    .right-quotes{
+        display: none;
+    }
   
     .menu-btn, .hours-btn {
         display: none;
@@ -537,8 +540,8 @@ color: gray;
         padding: 0;
     }
     #reviews-page img{
-        margin-left: 10%;
-        width: 50%;
+        margin-left: 5%;
+        width: 20%;
     }
 .slider{
     width: 100%;
@@ -552,8 +555,86 @@ color: gray;
     align-content: center;
     margin-left: -2%;
 }
-.menu-class,.review-class,.event-class,.live-class,.contact-class{
-    display: none;
+    .logo-ankole{
+        width: 20%;
+      align-items: center;
+      margin-left: -25%;
+        
+    }
+    .about-live{
+        flex-direction: column;
+    }
+    .live1{
+        flex-direction: column;
+    } 
+    .musicians img{
+        width: 100%;
+    }
+
 }
-    
+
+.text{
+    p{
+        color: brown;
+    }
+    h3{
+        padding:0;
+        margin: 0;
+        color: white;
+        width: 100%;
+    }
+    .menu{
+        flex-direction: column;
+      }
+      
+      .paragraph{
+        margin: 0;
+      }
+      
+      .soups-price{
+      flex-direction: column;
+      }
+      .logo img{
+      width:10%;
+      height: 10%;
+      margin-top: 5%;
+      
+      }
+      .reserve{
+        flex-direction: column;
+    }
+    form{
+        padding: 0;
+    }
+    form input{
+        width: 100%;
+    }
+    .format{
+        width: 100%;
+    }
+    .reserve img{
+        margin: 0;
+    }
+    .format button{
+        width: 100%;
+    }
+    #mushroom-musician{
+        width: 100%;
+        height: 100vh;
+    }
+    .mugugna-singer img{
+        width: 100%;
+        height: 100vh;
+    }
+      
+.centered{
+    flex-direction: column;
+    height: auto;
+  }
+   .centered img{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 80%;
+   }
+      
 }

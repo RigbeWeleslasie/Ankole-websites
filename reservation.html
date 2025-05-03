@@ -47,8 +47,8 @@
 <div class="whatsapp-icon">
     <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
 </div>
+
 <div id="reviews-page" class="page">
-    
     <div class="reviews-container">
         <div class="logo-ankole">
             <a href="#home-page"><img src="Image/images-removebg-preview.png"></a>
@@ -227,7 +227,6 @@
             updateReviewsSlider();
         }
     }
-    
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -272,13 +271,11 @@
     function updateReviewsSlider() {
         reviewsSlider.style.transform = `translateX(-${currentReview * 100}%)`;
     }
-    
     if (prevReviewBtn && nextReviewBtn) {
         prevReviewBtn.addEventListener('click', () => {
             currentReview = (currentReview - 1 + reviews.length) % reviews.length;
             updateReviewsSlider();
         });
-        
         nextReviewBtn.addEventListener('click', () => {
             currentReview = (currentReview + 1) % reviews.length;
             updateReviewsSlider();

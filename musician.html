@@ -151,7 +151,6 @@
 <script>
     const pages = document.querySelectorAll('.page');
     let sliders = [];
-    
     pages.forEach(page => {
         const slider = page.querySelector('.slider');
         if (slider) {
@@ -194,7 +193,6 @@
             updateReviewsSlider();
         }
     }
-    
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
